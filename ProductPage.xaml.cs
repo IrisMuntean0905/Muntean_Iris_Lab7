@@ -1,5 +1,5 @@
 using Muntean_Iris_Lab7.Models;
-//fara linia de sus nu merge codul
+
 namespace Muntean_Iris_Lab7;
 
 public partial class ProductPage : ContentPage
@@ -24,6 +24,12 @@ public partial class ProductPage : ContentPage
         listView.ItemsSource = await App.Database.GetProductsAsync();
     }
 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        listView.ItemsSource = await App.Database.GetProductsAsync();
+    }
+
     async void OnAddButtonClicked(object sender, EventArgs e)
     {
         Product p;
@@ -39,12 +45,6 @@ public partial class ProductPage : ContentPage
             p.ListProducts = new List<ListProduct> { lp };
             await Navigation.PopAsync();
         }
-    }
-
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetProductsAsync();
     }
 
 }
