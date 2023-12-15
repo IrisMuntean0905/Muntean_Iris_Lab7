@@ -26,7 +26,10 @@
                      Clicked="OnSaveButtonClicked" />
                 <Button Text="Show on Map" Grid.Column="1"
                     MaximumWidthRequest="200"
-                    Clicked="OnShowMapButtonClicked"></Button> 
+                    Clicked="OnShowMapButtonClicked"></Button>
+                <Button Text="Show on Map" Grid.Column="2"
+                     MaximumWidthRequest="200"
+                    Clicked="OnDeleteButtonClicked"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

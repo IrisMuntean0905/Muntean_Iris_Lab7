@@ -88,6 +88,9 @@ namespace Muntean_Iris_Lab7.Data
             shoplistid);
         }
 
+
+        //adaugat la lab 10
+
         public Task<List<Shop>> GetShopsAsync()
         {
             return _database.Table<Shop>().ToListAsync();
@@ -102,6 +105,11 @@ namespace Muntean_Iris_Lab7.Data
             {
                 return _database.InsertAsync(shop);
             }
+        }
+
+        public Task<int> DeleteShopAsync(Shop shop)
+        {
+            return _database.DeleteAsync(shop);
         }
 
     }
